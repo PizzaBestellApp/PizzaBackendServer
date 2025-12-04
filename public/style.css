@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: #b9edf2;
+    color: white;
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    min-height: 100%;
+}
+
+.sidebar {
+    background-color: rgb(135, 195, 255);
+    width: 20%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cards für das HTML, das erst geniert wird */
+
+#restaurants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+ 
+.pizza-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+ 
+.pizza-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+ 
+.pizza-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+ 
+.pizza-card .card-content {
+  padding: 12px;
+}
+ 
+.pizza-card h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+ 
+.pizza-card .price {
+  font-weight: bold;
+}

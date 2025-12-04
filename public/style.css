@@ -24,6 +24,7 @@
 nav {
     display: flex;
     flex-direction: column;
+    padding-top: 50px;
 }
 
 nav a {
@@ -39,18 +40,8 @@ nav .impressum {
     bottom: 40px;
 }
 
-.logo {
-    font-size: 72px;
-}
-
-.hero-text {
-    position: absolute;
-    right: 40px;
-    bottom: 40px;
-    color: #ffffff;
-    font-size: 40px;
-    text-transform: uppercase;
-    font-weight: bold;
+.logo img {
+   height: 20vh;
 }
 
 .hero-img {
@@ -68,6 +59,83 @@ button {
     text-transform: uppercase;
     font-size: 12px;
     cursor: pointer;
+}
+
+.hero {
+  position: relative; /* wichtig für absolute Positionierung */
+}
+ 
+/* Suchfeld + DE oben auf dem Bild */
+.header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+ 
+/* Suchfeld */
+
+.search-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 360px;
+}
+
+#search-input {
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: none;
+    background: white;
+    font-weight: bold;
+    color: #799ec0; 
+}
+
+#stadtwahl {
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: none;
+    background: white;
+    font-weight: bold;
+    color: #799ec0;
+}
+ 
+/* DE Button rechts */
+#language {
+  background: rgba(103, 164, 255, 0);
+  border: none;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-weight: bold;
+  cursor: pointer;
+  color:#446c92;
+  font-size: 21px;
+  position: absolute;
+  right: 20px;
+  top: 0;
+}
+ 
+/* Bild */
+.hero-img {
+  width: 100%;
+  display: block;
+}
+ 
+/* Text unten links auf dem Bild */
+.hero-text {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  color: white;
+}
+ 
+.hero-text h1 {
+  font-size: 64px;
+  line-height: 1;
 }
 /* Cards für das HTML, das erst geniert wird */
 

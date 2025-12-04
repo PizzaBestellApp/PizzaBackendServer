@@ -137,6 +137,7 @@ button {
   font-size: 64px;
   line-height: 1;
 }
+
 /* Cards für das HTML, das erst geniert wird */
 
 #restaurants-grid {
@@ -147,34 +148,66 @@ button {
 }
  
 .pizza-card {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
- 
-.pizza-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  background: transparent;
+  text-align: center;
 }
  
 .pizza-card img {
-  width: 100%;
+  width: 160px;
   height: 160px;
   object-fit: cover;
-}
- 
-.pizza-card .card-content {
-  padding: 12px;
+  border-radius: 50%;
 }
  
 .pizza-card h3 {
-  margin: 0 0 6px;
-  font-size: 16px;
+  margin: 10px 0 6px;
+  font-size: 14px;
+  color: #008c8f;
 }
  
-.pizza-card .price {
-  font-weight: bold;
+.pizza-card p {
+  font-size: 12px;
+  color: #008c8f;
+  line-height: 1.4;
+}
+ 
+.pizza-card button {
+  margin-top: 8px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: none;
+  background: #008c8f;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+#speisekarte-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.tagesangebot-container {
+  background: #7ddde3;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+ 
+.tagesangebot-container h2 {
+  color: white;
+  margin-bottom: 12px;
+}
+ 
+.tagesangebot-container img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+ 
+.tagesangebot-container p {
+  font-size: 12px;
+  color: #ffffff;
+  margin-bottom: 12px;
 }

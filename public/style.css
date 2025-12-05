@@ -1,0 +1,213 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: #b9edf2;
+    color: white;
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    min-height: 100vh;
+}
+
+.sidebar {
+    background-color: rgb(135, 195, 255);
+    width: 20%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+nav .impressum {
+    position: absolute;
+    bottom: 40px;
+}
+
+.logo img {
+   height: 20vh;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100vh;
+    display: block;
+}
+
+button {
+    padding: 8px 22px;
+    border-radius: 20px;
+    background-color: #446c92;
+    border: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.hero {
+  position: relative; /* wichtig für absolute Positionierung */
+}
+ 
+/* Suchfeld + DE oben auf dem Bild */
+.header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+ 
+/* Suchfeld */
+
+.search-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 360px;
+}
+
+#search-input {
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: none;
+    background: white;
+    font-weight: bold;
+    color: #799ec0; 
+}
+
+#stadtwahl {
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: none;
+    background: white;
+    font-weight: bold;
+    color: #799ec0;
+}
+ 
+/* DE Button rechts */
+#language {
+  background: rgba(103, 164, 255, 0);
+  border: none;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-weight: bold;
+  cursor: pointer;
+  color:#446c92;
+  font-size: 21px;
+  position: absolute;
+  right: 20px;
+  top: 0;
+}
+ 
+/* Bild */
+.hero-img {
+  width: 100%;
+  display: block;
+}
+ 
+/* Text unten links auf dem Bild */
+.hero-text {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  color: white;
+}
+ 
+.hero-text h1 {
+  font-size: 64px;
+  line-height: 1;
+}
+
+/* Cards für das HTML, das erst geniert wird */
+
+#restaurants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+ 
+.pizza-card {
+  background: transparent;
+  text-align: center;
+}
+ 
+.pizza-card img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+ 
+.pizza-card h3 {
+  margin: 10px 0 6px;
+  font-size: 14px;
+  color: #008c8f;
+}
+ 
+.pizza-card p {
+  font-size: 12px;
+  color: #008c8f;
+  line-height: 1.4;
+}
+ 
+.pizza-card button {
+  margin-top: 8px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: none;
+  background: #008c8f;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+#speisekarte-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.tagesangebot-container {
+  background: #7ddde3;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+ 
+.tagesangebot-container h2 {
+  color: white;
+  margin-bottom: 12px;
+}
+ 
+.tagesangebot-container img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+ 
+.tagesangebot-container p {
+  font-size: 12px;
+  color: #ffffff;
+  margin-bottom: 12px;
+}

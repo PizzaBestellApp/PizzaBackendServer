@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Blitz Lieferservice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">🏍️</div>
+            <nav>
+            <a href="index.html">Home</a>
+            <a href="speisekarte.html">Speisekarte</a>
+            <a href="angebote.html">Angebote</a>
+            <a href="restaurants.html">Restaurants</a>
+            <a href="bestellen.html">Hier bestellen</a>
+            <a href="warenkorb.html">Warenkorb</a>
+            <a href="login.html">Login</a>
+            </nav>
+            <a class="impressum" href="impressum.html">Impressum</a>
+        </div> <!--Sidebar-->
+
+        <div id="pizza-modal">
+            <img id="modal-img" src="#" alt="#">
+            <h1 id="modal-title"></h1>
+            <div id="modal-extras"></div>
+            <span id="modal-total-price">0.00</span>
+            <button id="modal-add-btn">...</button>
+            <button id="modal-close-btn" onclick="closeModal()"></button> 
+        </div>
+    </div> <!--Container-->
+    
+</body>
+</html>

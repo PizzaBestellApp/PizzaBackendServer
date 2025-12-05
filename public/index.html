@@ -3,19 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pizza Blitz Lieferservice</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Test Seite</h1>
-    <a href="seite2.html">zu Seite 2</a>
-    <button onclick="function1()">Klick mich</button>
-    <div id="response"></div>
-    <script>
-        async function function1() {
-            const response = await fetch('/restaurants');
-            const data = await response.json();
-            document.getElementById("response").textContent = JSON.stringify(data, null, 2);
-        }
-    </script>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo"> <img src="sources/logo neu.png" alt=""></div>
+            <nav>
+            <a href="index.html">Home</a>
+            <a href="speisekarte.html">Speisekarte</a>
+            <a href="angebote.html">Angebote</a>
+            <a href="restaurants.html">Restaurants</a>
+            <a href="bestellen.html">Hier bestellen</a>
+            <a href="warenkorb.html">Warenkorb</a>
+            <a href="login.html">Login</a>
+            <a class="impressum" href="impressum.html">Impressum</a>
+            </nav>
+            
+        </div> <!--Sidebar-->
+
+        <div class="content-landing-page">
+        <section class="hero">
+        <header class="header">
+        <div class="search-panel">
+        <div class="search-row">
+        <input id="search-input" type="text" placeholder="Suche">
+        <select id="stadtwahl">
+        <option>Bitte wählen Sie Ihren Lieferort aus</option>
+        </select>
+        </div>
+        </div>
+ 
+        <button id="language">DE</button>
+        </header>
+ 
+        <img class="hero-img" src="sources/c40089fa-8a89-447d-a738-53bf4238f51f.png" alt="Lieferfahrer">
+        <div class="hero-text">
+        <h1>LIEFERSERVICE<br>PIZZA BLITZ</h1>
+        </div>
+        </section>
+</div>
+    </div> <!--Container-->
+    
 </body>
 </html>

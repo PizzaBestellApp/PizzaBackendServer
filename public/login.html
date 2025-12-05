@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Blitz Lieferservice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">🏍️</div>
+            <nav>
+            <a href="index.html">Home</a>
+            <a href="speisekarte.html">Speisekarte</a>
+            <a href="angebote.html">Angebote</a>
+            <a href="restaurants.html">Restaurants</a>
+            <a href="bestellen.html">Hier bestellen</a>
+            <a href="warenkorb.html">Warenkorb</a>
+            <a href="login.html">Login</a>
+            </nav>
+            <a class="impressum" href="impressum.html">Impressum</a>
+        </div> <!--Sidebar-->
+ 
+       
+    <section class="checkout-section">
+    <h2>Checkout</h2>
+ 
+        <!-- LOGIN BOX (nur sichtbar wenn NICHT eingeloggt) -->
+        <div id="login-box">
+        <h3>Login</h3>
+        <input type="email" placeholder="E-Mail">
+        <input type="password" placeholder="Passwort">
+        <button id="login-btn">Einloggen</button>
+        </div>
+ 
+        <!-- ADRESS-FORMULAR (nur sichtbar wenn eingeloggt) -->
+        <div id="address-form" style="display:none;">
+        <h3>Lieferadresse</h3>
+ 
+        <input id="input-vorname" type="text" placeholder="Vorname">
+        <input id="input-nachname" type="text" placeholder="Nachname">
+        <input id="input-strasse" type="text" placeholder="Straße">
+        <input id="input-plz" type="text" placeholder="PLZ">
+        <input id="input-ort" type="text" placeholder="Ort">
+ 
+        <button id="checkout-btn">Bestellung abschicken</button>
+        </div>
+</section>
+ 
+</div>
+   
+</body>
+</html>

@@ -1,15 +1,27 @@
 /* ==========================================================================
    WARENKORB.JS
+   Zweck:
+   - Liest den Warenkorb aus global.js
+   - Rendert die Artikel-Liste auf warenkorb.html
+   - Zeigt die Gesamtsumme an
+   - Ermöglicht das Entfernen von Artikeln
    ========================================================================== */
-document.addEventListener("DOMContentLoaded", () => {
+
+   document.addEventListener("DOMContentLoaded", () => {
     const listeElement = document.getElementById("warenkorb-liste");
     const sumElement = document.getElementById("gesamtsumme");
 
-    if (!listeElement || !sumElement) return;
+    // Falls wir nicht auf warenkorb.html sind, einfach nichts tun
+    if (!listeElement || !sumElement) {
+        return;
+    }
 
     renderWarenkorb(listeElement, sumElement);
 });
 
+/**
+ * Rendert alle Artikel im Warenkorb.
+ */
 function renderWarenkorb(listeElement, sumElement) {
     listeElement.innerHTML = "";
 
@@ -23,14 +35,11 @@ function renderWarenkorb(listeElement, sumElement) {
 
     warenkorb.forEach((artikel, index) => {
         summe += artikel.preis;
-        
-        // SICHERHEIT: Namen bereinigen
-        const sichererName = escapeHTML(artikel.name);
 
         const zeile = document.createElement("div");
         zeile.className = "cart-item";
         zeile.innerHTML = `
-            <span>${sichererName}</span>
+            <span>${artikel.name}</span>
             <span>${artikel.preis.toFixed(2)} €</span>
             <button type="button" class="btn-remove" data-index="${index}">
                 Entfernen
@@ -42,7 +51,7 @@ function renderWarenkorb(listeElement, sumElement) {
 
     sumElement.textContent = summe.toFixed(2) + " €";
 
-    // Event Delegation für Buttons
+    // Klick-Handler für Entfernen-Buttons (Event-Delegation)
     listeElement.onclick = (ereignis) => {
         const ziel = ereignis.target;
         if (ziel.classList.contains("btn-remove")) {

@@ -8,5 +8,14 @@
 <body>
     <h1>Test Seite</h1>
     <a href="seite2.html">zu Seite 2</a>
+    <button onclick="function1()">Klick mich</button>
+    <div id="response"></div>
+    <script>
+        async function function1() {
+            const response = await fetch('/restaurants');
+            const data = await response.json();
+            document.getElementById("response").textContent = JSON.stringify(data, null, 2);
+        }
+    </script>
 </body>
 </html>

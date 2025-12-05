@@ -1,7 +1,7 @@
 import firebase_admin
 from firebase_admin import credentials, firestore
 
-# Firebase initialisieren
+
 if not firebase_admin._apps:
     cred = credentials.Certificate("pizzabestellapp-c93b5-firebase-adminsdk-fbsvc-c6c715fabd.json")
     firebase_admin.initialize_app(cred)
@@ -20,22 +20,24 @@ logger = logging.getLogger(__name__)
 
 
 app = FastAPI()
+restaurants = []
 
-# 1️⃣ API-Route → wird NICHT überschrieben
+
+
+
 @app.get("/")
 async def root():
     
     logger.info("Index wurde geladen")
-    await database_check()
     return FileResponse("public/index.html")
 
 
-
-# 3️⃣ Deine Firebase-Funktion
+@app.get("/restaurants")
 async def database_check():
+    global restaurants
     docs = db.collection("restaurants").stream()
 
-    restaurants = []
+    
     for doc in docs:
         item = doc.to_dict()
         item["id"] = doc.id
@@ -43,10 +45,10 @@ async def database_check():
 
     print("Restaurants aus Firestore:")
     print(restaurants)
+    return {"restaurants": restaurants}
 
 
-# 4️⃣ StaticFiles → erst GANZ AM ENDE mounten, damit es nichts überschreibt
-app.mount("/static", StaticFiles(directory="public"), name="static")
+app.mount("/", StaticFiles(directory="public"), name="static")
 
 
 
@@ -60,6 +62,5 @@ if __name__ == "__main__":
         reload_includes=["*.py"],
         reload_excludes=["public/*"],
         log_level="debug",
-        # 👇 wichtig:
         reload_dirs=["."],
     )
